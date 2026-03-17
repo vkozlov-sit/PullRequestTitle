@@ -37,7 +37,6 @@ jobs:
         uses: vkozlov-sit/pr-jira-link-action@v1
         with:
           jira-project-key: ${{vars.JIRA_PROJECT_KEY}}
-          jira-issue-url: ${{ vars.JIRA_URL }}
 ```
 
 ---
@@ -47,7 +46,6 @@ jobs:
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
 | `jira-project-key`| ✅ Yes | — | Jira Project Key to be included in the PR title and body, e.g. PDD-123' |
-| `jira-issue-url` | ✅ Yes | — | Base URL for Jira issues. Example: `https://yourcompany.atlassian.net/browse` |
 | `github-token` | ✅ Yes | `${{ github.token }}` | GitHub token with `pull-requests: write` permission. The default is sufficient in most cases. |
 
 ### Setting up `JIRA_ISSUE_URL`
@@ -78,7 +76,6 @@ steps:
     uses: vkozlov-sit/pr-jira-link-action@v1
     with:
       jira-project-key: ${{ vars.JIRA_PROJECT_KEY }}
-      jira-issue-url: ${{ vars.JIRA_ISSUE_URL }}
 
   - name: Print Jira info
     run: |
